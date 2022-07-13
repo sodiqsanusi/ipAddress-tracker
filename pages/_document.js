@@ -8,7 +8,7 @@ class MyDocument extends Document {
           <meta name='description' content='An application that gives you the live location of an IP Address on a map!'/>
           <meta name='author' content='Sodiq Sanusi'/>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='true' />
           <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet" />
         </Head>
         <body>
