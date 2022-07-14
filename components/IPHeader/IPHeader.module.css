@@ -82,6 +82,34 @@
   font-weight: 500;
 }
 
+.errorAlert{
+  position: absolute;
+  width: 90%;
+  max-width: 400px;
+  padding: 1em;
+  background-color: #a32d2dad;
+  color: rgba(235, 226, 226, 0.945);
+  border-radius: 8px;
+  transform: translateY(-140%);
+  transition: transform 2s;
+}.errorAlert button{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 20%;
+  padding: .5em 0;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  background-color: #000;
+}
+.display{
+  transform: translateY(10%);
+}
+
 @media(min-width: 746px) {
   .form{
     margin-bottom: 4em;
