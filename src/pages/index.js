@@ -39,9 +39,9 @@ export default function Home() {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
               />
-              <Marker position={[data.location.lat, data.location.lng]}>
+              <Marker position={defaultCenter}>
                 <Popup>
-                  Location of IP Address
+                  Location of your IP Address
                 </Popup>
               </Marker>
             </>

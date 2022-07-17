@@ -13,10 +13,12 @@
 }
 
 .header h1{
-  color: #fff;
   font-size: 1.4rem;
   font-weight: 500;
   margin-bottom: 1em;
+}.header h1 a{
+  text-decoration: none;
+  color: #fff;
 }
 
 .form{
@@ -66,6 +68,7 @@
   border-radius: 15px;
   gap: .7em 0;
   box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 .list li{
   list-style: none;

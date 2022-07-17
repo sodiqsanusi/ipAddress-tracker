@@ -3,23 +3,30 @@ import Image from 'next/image';
 import ArrowIcon from '../../../public/images/icon-arrow.svg';
 import { useState } from 'react';
 import HeaderLoading from './HeaderLoading';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 
 const IPHeader = ({data}) => {
 
+  let router = useRouter();
   let [value, setValue] = useState('');
   let [isItAnIP, setIP] = useState(true);
   let handleSubmit = (e) => {
     e.preventDefault();
     let test = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(value);
     setIP(test);
-    if(!isItAnIP) return;
+    if(!test){
+      return;
+    }
+    router.push(`/searchip/${value}`);
+    return;
   }
 
 
   return ( 
     <header className={styles.header}>
-      <h1>IP Address Tracker</h1>
+      <h1><Link href='/'>IP Address Tracker</Link></h1>
       <aside className={`${styles.errorAlert} ${!isItAnIP && styles.display}`}>
         Input is not an IP Address <br /> Only IP Addresses would be searched.
         <button onClick={() => setIP(true)}>Close</button>
