@@ -36,15 +36,15 @@ const IPHeader = ({data}) => {
       <ul className={styles.list}>
         <li>
           <h2>IP ADDRESS</h2>
-          {!data ? <HeaderLoading /> : <p>{data.query}</p>}
+          {!data ? <HeaderLoading /> : <p>{data.ip}</p>}
         </li>
         <li>
           <h2>LOCATION</h2>
-          {!data ? <HeaderLoading /> : <p>{data.city}, {data.countryCode}</p>}
+          {!data ? <HeaderLoading /> : <p>{data.location.city}, {data.location.country}</p>}
         </li>
         <li>
           <h2>TIMEZONE</h2>
-          {!data ? <HeaderLoading /> : <p>{data.timezone}</p>}
+          {!data ? <HeaderLoading /> : <p>UTC {data.location.timezone}</p>}
         </li>
         <li>
           <h2>ISP</h2>

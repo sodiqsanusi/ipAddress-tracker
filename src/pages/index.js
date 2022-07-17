@@ -12,9 +12,13 @@ const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Home() {
   let router = useRouter();
-  const {data, error} = useSWR('http://www.ip-api.com/json/', fetcher);
+  const {data, error} = useSWR('https://geo.ipify.org/api/v2/country,city?apiKey=at_NCW9nrnctnbJnDD7lHK3KTdfRDjmo', fetcher);
   if(error){
     router.push('/404');
+  }
+  let defaultCenter;
+  if(data){
+    defaultCenter = [data.location.lat, data.location.lng];
   }
   
 
@@ -28,14 +32,14 @@ export default function Home() {
       {!data && <Loading />}
       {data && (
         <main>
-        <Map className={styles.homeMap} center={[data.lat, data.lon]} zoom={12}>
+        <Map className={styles.homeMap} center={defaultCenter} zoom={12}>
           {({ TileLayer, Marker, Popup }) => (
             <>
               <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
               />
-              <Marker position={[data.lat, data.lon]}>
+              <Marker position={[data.location.lat, data.location.lng]}>
                 <Popup>
                   Location of IP Address
                 </Popup>
