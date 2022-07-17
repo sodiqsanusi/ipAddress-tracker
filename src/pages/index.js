@@ -12,10 +12,10 @@ const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function Home() {
   let router = useRouter();
-  const {data, error} = useSWR('http://ip-api.com/json/', fetcher);
-  // if(error){
-  //   router.push('/404');
-  // }
+  const {data, error} = useSWR('http://www.ip-api.com/json/', fetcher);
+  if(error){
+    router.push('/404');
+  }
   
 
   return (
