@@ -2,6 +2,7 @@ import styles from './IPHeader.module.css';
 import Image from 'next/image';
 import ArrowIcon from '../../../public/images/icon-arrow.svg';
 import { useState } from 'react';
+import HeaderLoading from './HeaderLoading';
 
 
 const IPHeader = ({data}) => {
@@ -35,19 +36,19 @@ const IPHeader = ({data}) => {
       <ul className={styles.list}>
         <li>
           <h2>IP ADDRESS</h2>
-          <p>{data.query}</p>
+          {!data ? <HeaderLoading /> : <p>{data.query}</p>}
         </li>
         <li>
           <h2>LOCATION</h2>
-          <p>{data.city}, {data.countryCode}</p>
+          {!data ? <HeaderLoading /> : <p>{data.city}, {data.countryCode}</p>}
         </li>
         <li>
           <h2>TIMEZONE</h2>
-          <p>{data.timezone}</p>
+          {!data ? <HeaderLoading /> : <p>{data.timezone}</p>}
         </li>
         <li>
           <h2>ISP</h2>
-          <p>{data.isp}</p>
+          {!data ? <HeaderLoading /> : <p>{data.isp}</p>}
         </li>
       </ul>
     </header>
