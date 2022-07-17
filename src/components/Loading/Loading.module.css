@@ -1,0 +1,22 @@
+.container{
+  display: flex;
+  align-items: center;
+  background-color: #bf97428f;
+  background-color: #CFD2CF;
+  justify-content: center;
+  min-height: 70vh;
+}
+.container span{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 10px solid transparent;
+  border-left-color: #0078AA;
+  border-right-color: #0078AA;
+  animation: rotate 3s linear 0s infinite forwards;
+}
+@keyframes rotate {
+  to{
+    transform: rotate(360deg);
+  }
+}

@@ -1,7 +1,9 @@
+import styles from './Loading.module.css';
+
 const Loading = () => {
   return ( 
-    <main>
-      Loading...
+    <main className={styles.container}>
+      <span></span>
     </main>
   );
 }
