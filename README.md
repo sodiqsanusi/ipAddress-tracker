@@ -29,8 +29,8 @@ Users should be able to:
 ![](./screenshot.png)
 
 ### Links
-- Solution URL: [https://github.com/sodiqsanusi/ipAddress-tracker/]()
-- Live Site URL: [https://iptracked.netlify.app/]()
+- Solution URL: [https://github.com/sodiqsanusi/ipAddress-tracker/](https://github.com/sodiqsanusi/ipAddress-tracker/)
+- Live Site URL: [https://iptracked.netlify.app/](https://iptracked.netlify.app/)
 
 ## My process
 Next.js can be annoying😭. I ran into numerous bugs on this project due to me being obsessed with trying out server-side rendering where it wasn't possible. Anyhow tho, I've learnt my lessons I guess. The process to build this was like the others: Build base styling of app first, determine best way to get data from API, then implement the gotten data on the application's interface without breaking things.  
